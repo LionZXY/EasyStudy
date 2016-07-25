@@ -1,5 +1,6 @@
 package ru.lionzxy.easystudy.fragments;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -9,18 +10,22 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
-import com.astuetz.PagerSlidingTabStrip;
 import com.balysv.materialmenu.MaterialMenu;
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
 import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.adapters.ViewpageAdapter;
-
+import ru.lionzxy.easystudy.helpers.PixelHelper;
 
 
 /**
@@ -28,7 +33,7 @@ import ru.lionzxy.easystudy.adapters.ViewpageAdapter;
  */
 public class ToolBarWithTabs extends Fragment {
     private FragmentCallbacks mCallbacks;
-    private Context context;
+
     public static interface FragmentCallbacks {
         void menuClick(MaterialMenuDrawable materialMenu);
     }
@@ -36,7 +41,6 @@ public class ToolBarWithTabs extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.context = context;
 
         try {
             mCallbacks = (FragmentCallbacks) context;
@@ -67,7 +71,6 @@ public class ToolBarWithTabs extends Fragment {
     Toolbar toolbar;
     ViewPager viewPager;
     ViewpageAdapter viewpagerArrayAdapter;
-    PagerSlidingTabStrip pagerSlidingTabStrip;
     private MaterialMenuDrawable materialMenu;
 
     private void findViewsById() {
@@ -83,12 +86,45 @@ public class ToolBarWithTabs extends Fragment {
         toolbar.inflateMenu(R.menu.activity_bar);
 
         viewPager = (ViewPager) v.findViewById(R.id.viewPager);
-        viewpagerArrayAdapter = new ViewpageAdapter(context);
+        viewpagerArrayAdapter = new ViewpageAdapter(v.getContext());
         viewPager.setAdapter(viewpagerArrayAdapter);
 
-        pagerSlidingTabStrip = (PagerSlidingTabStrip) v.findViewById(R.id.tabs);
-        pagerSlidingTabStrip.setViewPager(viewPager);
-        pagerSlidingTabStrip.setTextColorResource(R.color.white);
+        final int wight = v.getContext().getResources().getDisplayMetrics().widthPixels;
+
+        //Add horizontal scroll line
+        final RelativeLayout relativeLayout = (RelativeLayout) v.findViewById(R.id.relativeLayoutForSlide);
+        final View slideLine = new View(v.getContext());
+        slideLine.setLayoutParams(new RelativeLayout.LayoutParams(wight / viewpagerArrayAdapter.getCount(),
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        slideLine.setBackgroundColor(v.getContext().getResources().getColor(R.color.colorPrimaryLightDark));
+        relativeLayout.addView(slideLine);
+
+
+
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) slideLine.getLayoutParams();
+                params.setMargins((int) (wight / viewpagerArrayAdapter.getCount() * (positionOffset + position)), 0, 0, 0);
+                slideLine.setLayoutParams(params);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                Log.i("onPageScrollStateChange", String.valueOf(state));
+            }
+        });
+
+        //pagerSlidingTabStrip = (PagerSlidingTabStrip) v.findViewById(R.id.tabs);
+        //pagerSlidingTabStrip.setViewPager(viewPager);
+        //pagerSlidingTabStrip.setTextColorResource(R.color.white);
+        //pagerSlidingTabStrip.setTypeface(Typeface.DEFAULT,R.style.LoginStyle);
+        //pagerSlidingTabStrip.setTextSize((int) PixelHelper.pixelFromDP(context.getResources(),16));
 
     }
 }

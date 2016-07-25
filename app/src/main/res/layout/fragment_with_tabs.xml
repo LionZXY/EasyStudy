@@ -10,27 +10,50 @@
         android:layout_height="56dp"
         android:background="@color/primary_two"
         app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
         <ru.lionzxy.easystudy.views.OdudaBoldText
-            android:text="@string/app_capslock_name"
-            android:textSize="30sp"
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:layout_gravity="center_horizontal" />
+            android:text="@string/app_capslock_name"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
     </android.support.v7.widget.Toolbar>
 
-    <com.astuetz.PagerSlidingTabStrip
+    <LinearLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_below="@+id/toolbar_tabs"
         android:background="@color/primary_two"
-        app:pstsDividerColor="@color/primary_two"
-        app:pstsIndicatorColor="@color/white"
-        app:pstsIndicatorHeight="2dp"
-        app:pstsShouldExpand="true"
-        app:pstsUnderlineHeight="0dp" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="test1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="test2" />
+        </LinearLayout>
+        <RelativeLayout
+                android:id="@+id/relativeLayoutForSlide"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="#cccccc">
+            </RelativeLayout>
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
