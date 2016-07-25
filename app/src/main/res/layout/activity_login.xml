@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/login_gradient"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="40dp"
     tools:context="ru.lionzxy.easystudy.LoginActivity">
+
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_height="200dp"
-        android:alpha='0.1'
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="-50dp"
+        android:alpha='0.1'
         android:scaleType="fitStart"
         android:src="@drawable/message" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <ru.lionzxy.easystudy.views.OdudaBoldText
-            android:text="@string/app_logo_name"
-            android:layout_marginLeft="75dp"
-            android:layout_marginRight="75dp"
-            android:layout_marginBottom="30dp"
-            android:textSize="40sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
             android:gravity="center"
-            android:layout_gravity="center_horizontal" />
+            android:text="@string/app_logo_name"
+            android:textSize="40sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center"
@@ -49,30 +51,32 @@
                 android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:met_baseColor="@color/white"
-                app:met_primaryColor="@color/white"
-                app:met_textColor="@color/white"
-                app:met_textColorHint="@color/white"
-                app:met_underlineColor="@color/white"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:hint="@string/hint_email"
                 android:inputType="textEmailAddress"
-                android:singleLine="true" />
+                android:singleLine="true"
+                app:met_baseColor="@color/white"
+                app:met_errorColor="@color/white"
+                app:met_primaryColor="@color/white"
+                app:met_textColor="@color/white"
+                app:met_textColorHint="@color/white"
+                app:met_underlineColor="@color/white" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:met_baseColor="@color/white"
-                app:met_primaryColor="@color/white"
-                app:met_textColor="@color/white"
-                app:met_textColorHint="@color/white"
-                app:met_underlineColor="@color/white"
                 android:gravity="center"
                 android:hint="@string/hint_password"
                 android:inputType="textPassword"
-                android:singleLine="true" />
+                android:singleLine="true"
+                app:met_baseColor="@color/white"
+                app:met_errorColor="@color/white"
+                app:met_primaryColor="@color/white"
+                app:met_textColor="@color/white"
+                app:met_textColorHint="@color/white"
+                app:met_underlineColor="@color/white" />
 
         </LinearLayout>
 
@@ -80,7 +84,7 @@
             android:id="@+id/text_forgotpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="25dp"
             android:gravity="center"
             android:text="@string/forget_password" />
 
@@ -90,6 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:background="@drawable/loginbutton"
+
             android:text="@string/login" />
 
         <TextView

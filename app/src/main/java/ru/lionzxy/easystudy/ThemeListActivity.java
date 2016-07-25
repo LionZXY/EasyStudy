@@ -2,6 +2,7 @@ package ru.lionzxy.easystudy;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -31,12 +32,15 @@ public class ThemeListActivity extends AppCompatActivity implements ToolBarWithT
             if (w.getStatusBarColor() != getResources().getColor(R.color.colorPrimaryDark))
                 w.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     @Override
     public void menuClick(MaterialMenuDrawable materialMenu) {
-        switch (actionBarMenuState){
-            case 0:{
+        switch (actionBarMenuState) {
+            case 0: {
                 actionBarMenuState = 1;
                 materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW);
                 //TODO navigationDrawer.openDrawer();

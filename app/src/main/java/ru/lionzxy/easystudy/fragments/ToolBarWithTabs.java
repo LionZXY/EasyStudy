@@ -1,11 +1,8 @@
 package ru.lionzxy.easystudy.fragments;
 
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -15,17 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.balysv.materialmenu.MaterialMenu;
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
 import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.adapters.ViewpageAdapter;
-import ru.lionzxy.easystudy.helpers.PixelHelper;
 
 
 /**
@@ -59,7 +52,7 @@ public class ToolBarWithTabs extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_with_tabs, container, false);
+        v = inflater.inflate(R.layout.theme_tab_fragment, container, false);
         findViewsById();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window w = getActivity().getWindow();
@@ -99,7 +92,24 @@ public class ToolBarWithTabs extends Fragment {
         slideLine.setBackgroundColor(v.getContext().getResources().getColor(R.color.colorPrimaryLightDark));
         relativeLayout.addView(slideLine);
 
-
+        //WARNING: HARDCODE
+        final TextView[] tabsView = new TextView[2];
+        tabsView[0] = ((TextView) v.findViewById(R.id.tab1));
+        tabsView[0].setText(viewpagerArrayAdapter.getPageTitle(0));
+        tabsView[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(0);
+            }
+        });
+        tabsView[1] = ((TextView) v.findViewById(R.id.tab2));
+        tabsView[1].setText(viewpagerArrayAdapter.getPageTitle(1));
+        tabsView[1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(1);
+            }
+        });
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -107,24 +117,22 @@ public class ToolBarWithTabs extends Fragment {
                 RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) slideLine.getLayoutParams();
                 params.setMargins((int) (wight / viewpagerArrayAdapter.getCount() * (positionOffset + position)), 0, 0, 0);
                 slideLine.setLayoutParams(params);
+                tabsView[position].setAlpha(1 - positionOffset + 0.5F);
+                int newPos = position == 1 ? 0 : 1;
+                tabsView[newPos].setAlpha(positionOffset + 0.5F);
             }
 
             @Override
             public void onPageSelected(int position) {
-
+                tabsView[position].setAlpha(1F);
+                int newPos = position == 1 ? 0 : 1;
+                tabsView[newPos].setAlpha(0.5F);
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-                Log.i("onPageScrollStateChange", String.valueOf(state));
             }
         });
-
-        //pagerSlidingTabStrip = (PagerSlidingTabStrip) v.findViewById(R.id.tabs);
-        //pagerSlidingTabStrip.setViewPager(viewPager);
-        //pagerSlidingTabStrip.setTextColorResource(R.color.white);
-        //pagerSlidingTabStrip.setTypeface(Typeface.DEFAULT,R.style.LoginStyle);
-        //pagerSlidingTabStrip.setTextSize((int) PixelHelper.pixelFromDP(context.getResources(),16));
 
     }
 }

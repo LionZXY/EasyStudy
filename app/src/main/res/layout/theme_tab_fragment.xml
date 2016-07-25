@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/primary_two"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <ru.lionzxy.easystudy.views.OdudaBoldText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/app_capslock_name"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/toolbar_tabs"
+        android:background="@color/primary_two"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+
+            <ru.lionzxy.easystudy.views.RobotoRegularText
+                android:id="@+id/tab1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="8dp"
+                android:text="Лекции"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ru.lionzxy.easystudy.views.RobotoRegularText
+                android:id="@+id/tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="8dp"
+                android:text="Вопросы"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutForSlide"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="#cccccc" />
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabs">
+
+        <LinearLayout
+            android:id="@+id/page1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ru.lionzxy.easystudy.views.OnPressedButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="15dp"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:text="Лекция 1"
+                app:normalColor="@color/white"
+                app:onPressedColor="#336699" />
+
+            <ru.lionzxy.easystudy.views.OnPressedButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="15dp"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:text="Лекция 2"
+                app:normalColor="@color/white"
+                app:onPressedColor="#336699" />
+
+            <ru.lionzxy.easystudy.views.OnPressedButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="15dp"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:text="Лекция 3"
+                app:normalColor="@color/white"
+                app:onPressedColor="#336699" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/page2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ru.lionzxy.easystudy.views.OnPressedButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="15dp"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:text="Семинар 1"
+                app:normalColor="@color/white"
+                app:onPressedColor="#336699" />
+
+            <ru.lionzxy.easystudy.views.OnPressedButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="15dp"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:text="Семинар 2"
+                app:normalColor="@color/white"
+                app:onPressedColor="#336699" />
+
+            <ru.lionzxy.easystudy.views.OnPressedButton
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="start|center_vertical"
+                android:paddingEnd="15dp"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:text="Семинар 3"
+                app:normalColor="@color/white"
+                app:onPressedColor="#336699" />
+        </LinearLayout>
+
+    </android.support.v4.view.ViewPager>
+</RelativeLayout>
