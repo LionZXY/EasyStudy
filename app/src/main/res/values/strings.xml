@@ -1,9 +1,16 @@
 <resources>
     <string name="app_name">EasyStudy</string>
     <string name="app_logo_name">Easy. Study</string>
+    <string name="app_capslock_name">EASY.STUDY</string>
+    
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="login">LogIn</string>
     <string name="forget_password">Forgot Password?</string>
     <string name="registration">Not registered yet? Sign up!</string>
+    <string name="search_title">Search</string>
+    
+    <string name="lectures">Лекции</string>
+    <string name="questions">Вопросы</string>
+
 </resources>

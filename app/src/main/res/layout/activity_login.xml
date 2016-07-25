@@ -4,24 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#073993"
+    android:background="@drawable/login_gradient"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ru.lionzxy.easystudy.LoginActivity">
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_height="200dp"
+        android:alpha='0.1'
+        android:layout_marginLeft="-50dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/message" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="vertical">
 
         <ru.lionzxy.easystudy.views.OdudaBoldText
             android:text="@string/app_logo_name"
-            android:layout_marginLeft="80dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
+            android:layout_marginBottom="30dp"
             android:textSize="40sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,9 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -69,7 +76,7 @@
 
         </LinearLayout>
 
-        <TextView
+        <ru.lionzxy.easystudy.views.SpannableText
             android:id="@+id/text_forgotpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
