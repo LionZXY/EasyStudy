@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="6dp">
+
+
+        <ru.lionzxy.easystudy.views.RelativeLayoutWithLine
+            android:id="@+id/relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:colorLine="@color/gray"
+            app:gravity="right"
+            app:orientation="vertical"
+            app:paddingRight="40dp"
+            app:sizeLine="1dp">
+
+            <cdflynn.android.library.crossview.CrossView
+                android:id="@+id/cross_view"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/cross_view_selector"
+                android:padding="15dp"
+                app:lineColor="@color/gray" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="4dp"
+                android:layout_toLeftOf="@id/cross_view"
+                android:layout_toStartOf="@id/cross_view"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ru.lionzxy.easystudy.views.RobotoLightText
+                        android:id="@+id/questions_question"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Понятие и сущность менеджмента"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ru.lionzxy.easystudy.views.RobotoRegularText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/answer"
+                        android:textSize="12sp" />
+
+                    <ru.lionzxy.easystudy.views.RobotoLightText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:text="521"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ru.lionzxy.easystudy.views.RelativeLayoutWithLine>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

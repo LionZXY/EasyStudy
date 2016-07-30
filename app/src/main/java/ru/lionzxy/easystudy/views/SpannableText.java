@@ -6,8 +6,6 @@ import android.text.style.UnderlineSpan;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import ru.lionzxy.easystudy.R;
-
 /**
  * Created by LionZXY on 22.07.2016.
  */

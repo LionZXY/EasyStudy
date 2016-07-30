@@ -1,7 +1,6 @@
 package ru.lionzxy.easystudy.animations;
 
 import android.animation.ArgbEvaluator;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.TextView;
