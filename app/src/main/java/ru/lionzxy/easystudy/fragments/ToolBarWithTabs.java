@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +18,13 @@ import android.widget.TextView;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ru.lionzxy.easystudy.R;
+import ru.lionzxy.easystudy.adapters.SeminarAdapter;
 import ru.lionzxy.easystudy.adapters.ViewpageAdapter;
+import ru.lionzxy.easystudy.models.Seminar;
 
 
 /**
@@ -110,7 +117,7 @@ public class ToolBarWithTabs extends Fragment {
             }
         });
 
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) slideLine.getLayoutParams();
@@ -126,6 +133,15 @@ public class ToolBarWithTabs extends Fragment {
                 tabsView[position].setAlpha(1F);
                 int newPos = position == 1 ? 0 : 1;
                 tabsView[newPos].setAlpha(0.5F);
+
+                if(position == 1){
+                    RecyclerView recyclerView = (RecyclerView) viewPager.findViewById(R.id.page2);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(viewPager.getContext()));
+                    List<Seminar> seminarList = new ArrayList<>();
+                    for (int i = 0; i < 100; i++)
+                        seminarList.add(new Seminar("Семинар " + i));
+                    recyclerView.setAdapter(new SeminarAdapter(seminarList));
+                }
             }
 
             @Override
@@ -133,5 +149,9 @@ public class ToolBarWithTabs extends Fragment {
             }
         });
 
+    }
+
+    public ViewPager getViewPager(){
+        return viewPager;
     }
 }

@@ -1,6 +1,5 @@
 package ru.lionzxy.easystudy;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,7 +21,7 @@ public class ThemeListActivity extends AppCompatActivity implements ToolBarWithT
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.theme_list);
-        Fragment fragment = new ToolBarWithTabs();
+        ToolBarWithTabs fragment = new ToolBarWithTabs();
 
         getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { // Might need to change the status bar color if it is not the theme
@@ -30,6 +29,7 @@ public class ThemeListActivity extends AppCompatActivity implements ToolBarWithT
             if (w.getStatusBarColor() != getResources().getColor(R.color.colorPrimaryDark))
                 w.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+
 
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);

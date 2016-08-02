@@ -117,45 +117,13 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/page2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ru.lionzxy.easystudy.views.OnPressedButton
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="start|center_vertical"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingStart="15dp"
-                android:text="Семинар 1"
-                app:normalColor="@color/white"
-                app:onPressedColor="#336699" />
-
-            <ru.lionzxy.easystudy.views.OnPressedButton
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="start|center_vertical"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingStart="15dp"
-                android:text="Семинар 2"
-                app:normalColor="@color/white"
-                app:onPressedColor="#336699" />
-
-            <ru.lionzxy.easystudy.views.OnPressedButton
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="start|center_vertical"
-                android:paddingEnd="15dp"
-                android:paddingLeft="15dp"
-                android:paddingStart="15dp"
-                android:text="Семинар 3"
-                app:normalColor="@color/white"
-                app:onPressedColor="#336699" />
-        </LinearLayout>
+        </android.support.v7.widget.RecyclerView>
 
     </android.support.v4.view.ViewPager>
 </RelativeLayout>

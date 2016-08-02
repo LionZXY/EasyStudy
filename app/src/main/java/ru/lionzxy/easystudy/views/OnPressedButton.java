@@ -40,6 +40,7 @@ public class OnPressedButton extends Button {
         this.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                onTouchEvent(event);
                 int color;
                 AnimationSet animationSet;
                 switch (event.getAction()) {

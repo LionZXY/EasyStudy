@@ -8,11 +8,11 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
         android:layout_marginBottom="4dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="6dp"
         android:layout_marginRight="12dp"
+        android:layout_marginTop="6dp"
+        android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="4dp">
 
@@ -52,30 +52,15 @@
                     android:text="Даниил К."
                     android:textColor="@color/white"
                     android:textSize="16sp" />
-                <!--
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/question_tags"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/question_user_name"
-                        android:layout_marginTop="-3dp"
-                        android:layout_toEndOf="@+id/question_avatar_image"
-                        android:layout_toRightOf="@+id/question_avatar_image"
-                        android:orientation="horizontal">
 
-                        <ru.lionzxy.easystudy.views.RobotoLightText
-                            android:id="@+id/questions_tag"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:alpha="0.5"
-                            android:gravity="start"
-                            android:singleLine="true"
-                            android:text="# менеджмент"
-                            android:textColor="@color/white"
-                            android:textSize="12sp"
-                            android:visibility="visible" />
-                    </android.support.v7.widget.RecyclerView>
-    -->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/question_tags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/question_user_name"
+                    android:layout_marginTop="-3dp"
+                    android:layout_toEndOf="@+id/question_avatar_image"
+                    android:layout_toRightOf="@+id/question_avatar_image"/>
 
             </RelativeLayout>
 

@@ -26,6 +26,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
 
+    compile 'com.github.ksoichiro:android-observablescrollview:+'
     compile 'com.github.cdflynn:crossview:v1.0.1'
     compile 'com.android.support:multidex:+'
     compile 'de.hdodenhof:circleimageview:2.1.0'
