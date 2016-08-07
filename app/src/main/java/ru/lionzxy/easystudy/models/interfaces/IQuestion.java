@@ -8,5 +8,6 @@ import java.util.List;
  */
 public interface IQuestion extends Serializable{
     List<IAnswer> getAnswers();
+    String getQuestion();
 
 }

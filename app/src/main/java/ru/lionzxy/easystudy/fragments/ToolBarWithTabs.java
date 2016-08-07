@@ -5,9 +5,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,13 +17,8 @@ import android.widget.TextView;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ru.lionzxy.easystudy.R;
-import ru.lionzxy.easystudy.adapters.SeminarAdapter;
 import ru.lionzxy.easystudy.adapters.ViewpageAdapter;
-import ru.lionzxy.easystudy.models.Seminar;
 
 
 /**
@@ -32,9 +26,16 @@ import ru.lionzxy.easystudy.models.Seminar;
  */
 public class ToolBarWithTabs extends Fragment {
     private FragmentCallbacks mCallbacks;
+    private FragmentManager fragmentManager;
 
     public static interface FragmentCallbacks {
         void menuClick(MaterialMenuDrawable materialMenu);
+        void onPageSelected(int position, ViewPager viewPager);
+    }
+
+    public ToolBarWithTabs setFragmentManager(FragmentManager fragmentManager){
+        this.fragmentManager = fragmentManager;
+        return this;
     }
 
     @Override
@@ -58,7 +59,7 @@ public class ToolBarWithTabs extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.theme_tab_fragment, container, false);
+        v = inflater.inflate(R.layout.fragments_themechangepage, container, false);
         findViewsById();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window w = getActivity().getWindow();
@@ -85,7 +86,7 @@ public class ToolBarWithTabs extends Fragment {
         toolbar.inflateMenu(R.menu.activity_bar);
 
         viewPager = (ViewPager) v.findViewById(R.id.viewPager);
-        viewpagerArrayAdapter = new ViewpageAdapter(v.getContext());
+        viewpagerArrayAdapter = new ViewpageAdapter(v.getContext(), fragmentManager);
         viewPager.setAdapter(viewpagerArrayAdapter);
 
         final int wight = v.getContext().getResources().getDisplayMetrics().widthPixels;
@@ -108,6 +109,7 @@ public class ToolBarWithTabs extends Fragment {
                 viewPager.setCurrentItem(0);
             }
         });
+        tabsView[0].setWidth(wight/viewpagerArrayAdapter.getCount());
         tabsView[1] = ((TextView) v.findViewById(R.id.tab2));
         tabsView[1].setText(viewpagerArrayAdapter.getPageTitle(1));
         tabsView[1].setOnClickListener(new View.OnClickListener() {
@@ -116,6 +118,7 @@ public class ToolBarWithTabs extends Fragment {
                 viewPager.setCurrentItem(1);
             }
         });
+        tabsView[1].setWidth(wight/viewpagerArrayAdapter.getCount());
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -133,15 +136,8 @@ public class ToolBarWithTabs extends Fragment {
                 tabsView[position].setAlpha(1F);
                 int newPos = position == 1 ? 0 : 1;
                 tabsView[newPos].setAlpha(0.5F);
+                mCallbacks.onPageSelected(position, viewPager);
 
-                if(position == 1){
-                    RecyclerView recyclerView = (RecyclerView) viewPager.findViewById(R.id.page2);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(viewPager.getContext()));
-                    List<Seminar> seminarList = new ArrayList<>();
-                    for (int i = 0; i < 100; i++)
-                        seminarList.add(new Seminar("Семинар " + i));
-                    recyclerView.setAdapter(new SeminarAdapter(seminarList));
-                }
             }
 
             @Override
@@ -151,7 +147,7 @@ public class ToolBarWithTabs extends Fragment {
 
     }
 
-    public ViewPager getViewPager(){
+    public ViewPager getViewPager() {
         return viewPager;
     }
 }

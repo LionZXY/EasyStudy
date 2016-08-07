@@ -4,22 +4,24 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
+
+import java.io.Serializable;
 
 import ru.lionzxy.easystudy.QuestionsActivity;
 import ru.lionzxy.easystudy.R;
-import ru.lionzxy.easystudy.models.Seminar;
+import ru.lionzxy.easystudy.models.interfaces.ITheme;
+import ru.lionzxy.easystudy.views.OnPressedButton;
 
 /**
  * Created by LionZXY on 02.08.2016.
  */
-public class SeminarViewHolder extends RecyclerView.ViewHolder {
-    Button button;
+public class ThemeViewHolder extends RecyclerView.ViewHolder {
+    OnPressedButton button;
 
-    public SeminarViewHolder(View itemView) {
+    public ThemeViewHolder(View itemView) {
         super(itemView);
 
-        this.button = (Button) itemView.findViewById(R.id.pressedButton);
+        this.button = (OnPressedButton) itemView.findViewById(R.id.pressedButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,15 +31,17 @@ public class SeminarViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
-    public SeminarViewHolder setItem(@NonNull Seminar seminar) {
-        if (seminar == null)
+    public ThemeViewHolder setItem(@NonNull final ITheme theme) {
+        if (theme == null)
             return this;
 
-        this.button.setText(seminar.getTitle());
+        this.button.clear();
+        this.button.setText(theme.getTitle());
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(button.getContext(), QuestionsActivity.class);
+                intent.putExtra("theme",(Serializable) theme);
                 button.getContext().startActivity(intent);
             }
         });

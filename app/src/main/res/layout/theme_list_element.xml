@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <ru.lionzxy.easystudy.views.OnPressedButton
         android:id="@+id/pressedButton"
-        app:normalColor="@color/white"
-        app:onPressedColor="#336699"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:ellipsize="end"
         android:gravity="start|center_vertical"
-        android:paddingEnd="15dp"
-        android:paddingLeft="15dp"
-        android:paddingStart="15dp"
-        android:text="Лекция 2" />
+        android:paddingEnd="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingStart="20dp"
+        android:singleLine="true"
+        android:text="Лекция 2"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:normalColor="@color/white"
+        app:onPressedColor="#336699" />
 </LinearLayout>

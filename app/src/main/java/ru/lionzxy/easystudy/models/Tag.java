@@ -1,9 +1,11 @@
 package ru.lionzxy.easystudy.models;
 
+import java.io.Serializable;
+
 /**
  * Created by LionZXY on 01.08.2016.
  */
-public class Tag {
+public class Tag implements Serializable{
     private String tag;
 
     public Tag(String tag) {

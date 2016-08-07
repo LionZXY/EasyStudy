@@ -14,7 +14,12 @@ import ru.lionzxy.easystudy.R;
  * Created by LionZXY on 28.07.2016.
  */
 public class RelativeLayoutWithLine extends RelativeLayout {
-    int color, paddingLeft, paddingRight, paddingTop, paddingBottom, orientation, gravity, size;
+    private int color, paddingLeft, paddingRight, paddingTop, paddingBottom, orientation, gravity, size;
+    private OnDrowListener event;
+
+    public static interface OnDrowListener {
+        void onDrow(Canvas canvas);
+    }
 
     public RelativeLayoutWithLine(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -34,6 +39,10 @@ public class RelativeLayoutWithLine extends RelativeLayout {
         color = a.getColor(R.styleable.RelativeLayoutWithLine_colorLine, Color.BLACK);
 
         this.setWillNotDraw(false);
+    }
+
+    public void setOnDrowListener(OnDrowListener listener) {
+        event = listener;
     }
 
     @Override
@@ -76,5 +85,8 @@ public class RelativeLayoutWithLine extends RelativeLayout {
         }
 
         canvas.drawLine(startX, startY, endX, endY, paint);
+
+        if (event != null)
+            event.onDrow(canvas);
     }
 }

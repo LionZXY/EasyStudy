@@ -43,23 +43,22 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_margin="4dp"
+                android:layout_centerInParent="true"
                 android:layout_toLeftOf="@id/cross_view"
                 android:layout_toStartOf="@id/cross_view"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <ru.lionzxy.easystudy.views.RobotoLightText
-                        android:id="@+id/questions_question"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Понятие и сущность менеджмента"
-                        android:textColor="@color/black" />
-                </LinearLayout>
+                <ru.lionzxy.easystudy.views.RobotoLightText
+                    android:id="@+id/questions_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Понятие и сущность менеджмента"
+                    android:textColor="@color/black" />
+
 
                 <LinearLayout
+                    android:id="@+id/answerCount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 

@@ -2,17 +2,24 @@
     <string name="app_name">EasyStudy</string>
     <string name="app_logo_name">Easy. Study</string>
     <string name="app_capslock_name">EASY.STUDY</string>
-    
+
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="login">LogIn</string>
     <string name="forget_password">Forgot Password?</string>
     <string name="registration">Not registered yet? Sign up!</string>
     <string name="search_title">Search</string>
-    
+
     <string name="lectures">Лекции</string>
     <string name="questions">Вопросы</string>
     <string name="question">Вопрос: </string>
     <string name="answer">Ответов: </string>
 
+    <string name="test">
+Менеджмент также — академическая дисциплина, социальная наука, предметом которой является изучение социальной организации. Сегодня вряд ли кто скажет, как и когда зародилось искусство. Здесь уместно упомянуть систему управления, которая существовала в доперестроечный период.
+
+В то время слово "менеджмент" старались не употреблять, а было время, когда его просто боялись использовать. Административно-командная система искала свои таланты. Среди них были выдающиеся "командиры производства", блестящие технократы, которым индустрия обязана чередой ярких достижений, но, вместе с тем - и жесткие бюрократы, догматики, мастера политической интриги, оказавшиеся творцами либо пособниками не просто застоя в обществе не просто застоя в обществе, но и просто национального бедствия.
+
+Огромная масса людей в нашем хозяйстве, не занимавшихся политикой, просто трудилось на рядовых управленческих должностях.
+    </string>
 </resources>

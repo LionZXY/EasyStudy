@@ -29,6 +29,11 @@ public class Question implements IQuestion {
 
     @Override
     public List<IAnswer> getAnswers() {
-        return null;
+        return answers;
+    }
+
+    @Override
+    public String getQuestion() {
+        return question;
     }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="questions_test">
+        <item>Функции корпоративной культуры</item>
+        <item>Особенности деятельности менеджеров</item>
+        <item>Жизненный цикл организации</item>
+        <item>Менеджмент как наука</item>
+        <item>Современные школы менеджмента</item>
+        <item>Понятие и сущность менеджмента</item>
+        <item>Кадровая политика на предприятии</item>
+        <item>Принятия управленческих решений</item>
+        <item>Прибыль, как один из важнейших ориентиров</item>
+        <item>Сущность и механизм реинжиниринга</item>
+    </string-array>
+
+    <string-array name="lections_test">
+        <item>Международное право</item>
+        <item>Экономика</item>
+        <item>Менеджмент</item>
+        <item>Философия</item>
+        <item>Электромеханика</item>
+        <item>Социология</item>
+        <item>Физика</item>
+        <item>Высшая математика</item>
+        <item>Программирование</item>
+        <item>Антропология</item>
+    </string-array>
+</resources>
