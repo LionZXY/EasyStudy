@@ -11,7 +11,7 @@
         android:background="@color/primary_two"
         app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-        <ru.lionzxy.easystudy.views.OdudaBoldText
+        <ru.lionzxy.easystudy.views.CustomFontView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -19,7 +19,8 @@
             android:text="@string/app_capslock_name"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            app:font="OdudaBold" />
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
@@ -34,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="44dp">
 
-            <ru.lionzxy.easystudy.views.RobotoRegularText
+            <ru.lionzxy.easystudy.views.CustomFontView
                 android:id="@+id/tab1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -46,9 +47,10 @@
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:font="RobotoRegular" />
 
-            <ru.lionzxy.easystudy.views.RobotoRegularText
+            <ru.lionzxy.easystudy.views.CustomFontView
                 android:id="@+id/tab2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -60,7 +62,8 @@
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:font="RobotoRegular" />
         </LinearLayout>
 
         <RelativeLayout
@@ -80,14 +83,14 @@
             android:id="@+id/page1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/page2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
 
     </android.support.v4.view.ViewPager>
 </RelativeLayout>

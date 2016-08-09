@@ -12,14 +12,15 @@
         android:background="@color/primary_two"
         app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-        <ru.lionzxy.easystudy.views.RobotoLightText
+        <ru.lionzxy.easystudy.views.CustomFontView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:text="@string/questions"
             android:textColor="@color/white"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            app:font="RobotoLight" />
     </android.support.v7.widget.Toolbar>
 
     <RelativeLayout
@@ -30,10 +31,12 @@
             android:id="@+id/recyclerViewAnswers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="60dp"
             android:clipToPadding="false"
-            android:fadeScrollbars="false" />
+            android:fadeScrollbars="false"
+            android:paddingTop="60dp" />
 
-        <include android:id="@+id/question_card" layout="@layout/question_answer_question" />
+        <include
+            android:id="@+id/question_card"
+            layout="@layout/question_answer_question" />
     </RelativeLayout>
 </LinearLayout>

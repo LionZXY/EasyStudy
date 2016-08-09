@@ -42,7 +42,7 @@
                     android:paddingTop="6dp"
                     android:src="@drawable/img_freeface00" />
 
-                <ru.lionzxy.easystudy.views.RobotoRegularText
+                <ru.lionzxy.easystudy.views.CustomFontView
                     android:id="@+id/question_user_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -52,7 +52,8 @@
                     android:singleLine="true"
                     android:text="Даниил К."
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:font="RobotoRegular" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/question_tags"
@@ -65,7 +66,7 @@
 
             </RelativeLayout>
 
-            <ru.lionzxy.easystudy.views.RobotoLightText
+            <ru.lionzxy.easystudy.views.CustomFontView
                 android:id="@+id/question_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,7 +76,8 @@
                 android:layout_marginTop="12dp"
                 android:ellipsize="end"
                 android:maxLines="4"
-                android:text="@string/test" />
+                android:text="@string/test"
+                app:font="RobotoLight" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,7 +94,7 @@
                     android:gravity="center_vertical"
                     android:src="@drawable/star_inactive" />
 
-                <ru.lionzxy.easystudy.views.RobotoRegularText
+                <ru.lionzxy.easystudy.views.CustomFontView
                     android:id="@+id/question_favor"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -101,7 +103,8 @@
                     android:gravity="center_vertical"
                     android:minWidth="30dp"
                     android:text="280"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    app:font="RobotoRegular" />
 
                 <ImageView
                     android:layout_width="12dp"
@@ -111,7 +114,7 @@
                     android:gravity="center_vertical"
                     android:src="@drawable/time" />
 
-                <ru.lionzxy.easystudy.views.RobotoRegularText
+                <ru.lionzxy.easystudy.views.CustomFontView
                     android:id="@+id/question_time"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -119,7 +122,8 @@
                     android:layout_marginStart="6dp"
                     android:gravity="center_vertical"
                     android:text="21.08.1998"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    app:font="RobotoRegular" />
             </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>

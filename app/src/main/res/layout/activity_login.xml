@@ -11,13 +11,13 @@
     tools:context="ru.lionzxy.easystudy.LoginActivity">
 
     <ImageView
-        android:contentDescription="@string/app_name"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="-50dp"
         android:layout_marginStart="-50dp"
         android:alpha='0.1'
+        android:contentDescription="@string/app_name"
         android:scaleType="fitStart"
         android:src="@drawable/message" />
 
@@ -29,7 +29,7 @@
         android:layout_marginTop="20dp"
         android:orientation="vertical">
 
-        <ru.lionzxy.easystudy.views.OdudaBoldText
+        <ru.lionzxy.easystudy.views.CustomFontView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -38,7 +38,8 @@
             android:layout_marginRight="75dp"
             android:gravity="center"
             android:text="@string/app_logo_name"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            app:font="OdudaBold" />
 
         <LinearLayout
             android:layout_width="match_parent"

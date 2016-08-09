@@ -22,4 +22,11 @@
             <enum name="right" value="3" />
         </attr>
     </declare-styleable>
+    <declare-styleable name="CustomFontView">
+        <attr name="font" format="enum">
+            <enum name="RobotoRegular" value="0" />
+            <enum name="RobotoLight" value="1" />
+            <enum name="OdudaBold" value="2" />
+        </attr>
+    </declare-styleable>
 </resources>

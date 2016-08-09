@@ -42,19 +42,20 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_margin="4dp"
                 android:layout_centerInParent="true"
+                android:layout_margin="4dp"
                 android:layout_toLeftOf="@id/cross_view"
                 android:layout_toStartOf="@id/cross_view"
                 android:orientation="vertical">
 
 
-                <ru.lionzxy.easystudy.views.RobotoLightText
+                <ru.lionzxy.easystudy.views.CustomFontView
                     android:id="@+id/questions_question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Понятие и сущность менеджмента"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    app:font="RobotoLight" />
 
 
                 <LinearLayout
@@ -62,19 +63,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ru.lionzxy.easystudy.views.RobotoRegularText
+                    <ru.lionzxy.easystudy.views.CustomFontView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/answer"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:font="RobotoRegular" />
 
-                    <ru.lionzxy.easystudy.views.RobotoLightText
+                    <ru.lionzxy.easystudy.views.CustomFontView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:layout_marginStart="4dp"
                         android:text="521"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        app:font="RobotoLight" />
                 </LinearLayout>
 
             </LinearLayout>
