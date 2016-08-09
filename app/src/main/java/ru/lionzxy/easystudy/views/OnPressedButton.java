@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationSet;
@@ -35,16 +36,18 @@ public class OnPressedButton extends Button {
 
         this.setBackgroundColor(normalColor);
 
-        this.setTypeface(Typeface.createFromAsset(context.getAssets(),"fonts/Roboto-Light.ttf"));
+        this.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Light.ttf"));
 
         this.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 onTouchEvent(event);
+                Log.i("OnTouch", "Touch! " + event.getAction());
                 int color;
                 AnimationSet animationSet;
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
+                    case MotionEvent.ACTION_MOVE:
                         clearAnimation();
                         color = ((ColorDrawable) OnPressedButton.this.getBackground()).getColor();
                         animationSet = new AnimationSet(true);
@@ -67,7 +70,7 @@ public class OnPressedButton extends Button {
         });
     }
 
-    public void clear(){
+    public void clear() {
         int color;
         AnimationSet animationSet;
 
