@@ -83,7 +83,9 @@ public class AnswersListActivity extends AppCompatActivity {
         ((RelativeLayoutWithLine) findViewById(R.id.relative)).setOnDrowListener(new RelativeLayoutWithLine.OnDrowListener() {
             @Override
             public void onDrow(Canvas canvas) {
-                recyclerView.setPadding(0, (int) (canvas.getHeight() + PixelHelper.pixelFromDP(getResources(), 20)), 0, 0);
+                int height = (int) (canvas.getHeight() + PixelHelper.pixelFromDP(getResources(), 20));
+                recyclerView.setPadding(0, height, 0, 0);
+                ((LinearLayoutManager) recyclerView.getLayoutManager()).scrollToPositionWithOffset(0, height);
             }
         });
 
