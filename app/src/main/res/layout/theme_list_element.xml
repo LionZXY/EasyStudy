@@ -9,7 +9,10 @@
         android:id="@+id/pressedButton"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:clickable="true"
+        android:colorControlHighlight="#336699"
         android:ellipsize="end"
+        android:foreground="?android:attr/selectableItemBackground"
         android:gravity="start|center_vertical"
         android:paddingEnd="20dp"
         android:paddingLeft="20dp"
@@ -18,8 +21,8 @@
         android:singleLine="true"
         android:text="Лекция 2"
         android:textAllCaps="false"
-        android:textStyle="bold"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:normalColor="@color/white"
         app:onPressedColor="#336699" />
 </LinearLayout>

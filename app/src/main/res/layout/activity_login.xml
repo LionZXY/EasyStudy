@@ -11,10 +11,12 @@
     tools:context="ru.lionzxy.easystudy.LoginActivity">
 
     <ImageView
+        android:contentDescription="@string/app_name"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="-50dp"
+        android:layout_marginStart="-50dp"
         android:alpha='0.1'
         android:scaleType="fitStart"
         android:src="@drawable/message" />
@@ -94,7 +96,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:background="@drawable/loginbutton"
-
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:text="@string/login" />
 
         <TextView

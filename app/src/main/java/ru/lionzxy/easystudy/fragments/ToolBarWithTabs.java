@@ -30,10 +30,11 @@ public class ToolBarWithTabs extends Fragment {
 
     public static interface FragmentCallbacks {
         void menuClick(MaterialMenuDrawable materialMenu);
+
         void onPageSelected(int position, ViewPager viewPager);
     }
 
-    public ToolBarWithTabs setFragmentManager(FragmentManager fragmentManager){
+    public ToolBarWithTabs setFragmentManager(FragmentManager fragmentManager) {
         this.fragmentManager = fragmentManager;
         return this;
     }
@@ -80,7 +81,8 @@ public class ToolBarWithTabs extends Fragment {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCallbacks.menuClick(materialMenu);
+                if (mCallbacks != null)
+                    mCallbacks.menuClick(materialMenu);
             }
         });
         toolbar.inflateMenu(R.menu.activity_bar);
@@ -109,7 +111,7 @@ public class ToolBarWithTabs extends Fragment {
                 viewPager.setCurrentItem(0);
             }
         });
-        tabsView[0].setWidth(wight/viewpagerArrayAdapter.getCount());
+        tabsView[0].setWidth(wight / viewpagerArrayAdapter.getCount());
         tabsView[1] = ((TextView) v.findViewById(R.id.tab2));
         tabsView[1].setText(viewpagerArrayAdapter.getPageTitle(1));
         tabsView[1].setOnClickListener(new View.OnClickListener() {
@@ -118,7 +120,7 @@ public class ToolBarWithTabs extends Fragment {
                 viewPager.setCurrentItem(1);
             }
         });
-        tabsView[1].setWidth(wight/viewpagerArrayAdapter.getCount());
+        tabsView[1].setWidth(wight / viewpagerArrayAdapter.getCount());
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -136,7 +138,8 @@ public class ToolBarWithTabs extends Fragment {
                 tabsView[position].setAlpha(1F);
                 int newPos = position == 1 ? 0 : 1;
                 tabsView[newPos].setAlpha(0.5F);
-                mCallbacks.onPageSelected(position, viewPager);
+                if (mCallbacks != null)
+                    mCallbacks.onPageSelected(position, viewPager);
 
             }
 

@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
@@ -19,7 +20,7 @@ import ru.lionzxy.easystudy.models.interfaces.IAnswer;
 /**
  * Created by LionZXY on 07.08.2016.
  */
-public class AnswerActivity extends AppCompatActivity {
+public class AnswerActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,11 +52,11 @@ public class AnswerActivity extends AppCompatActivity {
 
         CrossView crossView = (CrossView) findViewById(R.id.cross_view);
         crossView.cross();
-        crossView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        crossView.setOnClickListener(this);
+    }
 
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(this, "OnClick", Toast.LENGTH_SHORT).show();
     }
 }

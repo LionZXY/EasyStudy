@@ -59,7 +59,7 @@ public class ViewpageAdapter extends FragmentPagerAdapter {
             return context.getResources().getString(R.string.lectures);
         }
         if (position == 1) {
-            return context.getResources().getString(R.string.questions);
+            return context.getResources().getString(R.string.exams);
         }
         return getPageTitle(position);
     }

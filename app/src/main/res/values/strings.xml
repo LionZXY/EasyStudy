@@ -12,6 +12,7 @@
 
     <string name="lectures">Лекции</string>
     <string name="questions">Вопросы</string>
+    <string name="exams">Экзамены</string>
     <string name="question">Вопрос: </string>
     <string name="answer">Ответов: </string>
 
