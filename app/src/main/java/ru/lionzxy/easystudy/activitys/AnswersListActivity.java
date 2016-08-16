@@ -1,4 +1,4 @@
-package ru.lionzxy.easystudy;
+package ru.lionzxy.easystudy.activitys;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
 import cdflynn.android.library.crossview.CrossView;
+import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.adapters.AnswerAdapter;
 import ru.lionzxy.easystudy.helpers.PixelHelper;
 import ru.lionzxy.easystudy.models.interfaces.IQuestion;

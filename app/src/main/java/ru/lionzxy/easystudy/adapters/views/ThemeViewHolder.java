@@ -7,7 +7,7 @@ import android.view.View;
 
 import java.io.Serializable;
 
-import ru.lionzxy.easystudy.QuestionsActivity;
+import ru.lionzxy.easystudy.activitys.QuestionsActivity;
 import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.models.interfaces.ITheme;
 import ru.lionzxy.easystudy.views.OnPressedButton;

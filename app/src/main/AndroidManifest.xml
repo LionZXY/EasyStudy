@@ -11,11 +11,11 @@
         <meta-data
             android:name="com.bugsnag.android.API_KEY"
             android:value="52c5d2897e826c4b3ade2a56328dd74c"/>
-        <activity android:name=".AnswersListActivity" android:theme="@style/AppTheme"/>
-        <activity android:name=".AnswerActivity" android:theme="@style/AppTheme"/>
-        <activity android:name=".QuestionsActivity" android:theme="@style/AppTheme"/>
-        <activity android:name=".LoginActivity" android:theme="@style/LoginStyle"/>
-        <activity android:name=".ThemeListActivity" android:theme="@style/AppTheme">
+        <activity android:name=".activitys.AnswersListActivity" android:theme="@style/AppTheme"/>
+        <activity android:name=".activitys.AnswerActivity" android:theme="@style/AppTheme"/>
+        <activity android:name=".activitys.QuestionsActivity" android:theme="@style/AppTheme"/>
+        <activity android:name=".activitys.LoginActivity" android:theme="@style/LoginStyle"/>
+        <activity android:name=".activitys.ThemeListActivity" android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

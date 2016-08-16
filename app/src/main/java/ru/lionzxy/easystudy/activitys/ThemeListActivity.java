@@ -1,4 +1,4 @@
-package ru.lionzxy.easystudy;
+package ru.lionzxy.easystudy.activitys;
 
 import android.content.Intent;
 import android.os.Build;
@@ -11,6 +11,7 @@ import android.view.Window;
 import com.balysv.materialmenu.MaterialMenuDrawable;
 import com.bugsnag.android.Bugsnag;
 
+import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.fragments.ToolBarWithTabs;
 
 /**

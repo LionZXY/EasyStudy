@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import ru.lionzxy.easystudy.AnswersListActivity;
-import ru.lionzxy.easystudy.QuestionsActivity;
+import ru.lionzxy.easystudy.activitys.AnswersListActivity;
+import ru.lionzxy.easystudy.activitys.QuestionsActivity;
 import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.models.interfaces.IQuestion;
 import ru.lionzxy.easystudy.views.OnPressedButton;

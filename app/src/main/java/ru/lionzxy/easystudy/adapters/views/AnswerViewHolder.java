@@ -6,7 +6,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import ru.lionzxy.easystudy.AnswerActivity;
+import ru.lionzxy.easystudy.activitys.AnswerActivity;
 import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.helpers.ViewHolderHelper;
 import ru.lionzxy.easystudy.models.interfaces.IAnswer;

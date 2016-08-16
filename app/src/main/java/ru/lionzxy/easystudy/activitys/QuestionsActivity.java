@@ -1,4 +1,4 @@
-package ru.lionzxy.easystudy;
+package ru.lionzxy.easystudy.activitys;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.View;
 
 import com.balysv.materialmenu.MaterialMenuDrawable;
 
+import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.adapters.QuestionAdapter;
 import ru.lionzxy.easystudy.models.interfaces.ITheme;
 
