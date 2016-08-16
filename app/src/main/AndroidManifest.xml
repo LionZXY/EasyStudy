@@ -11,6 +11,7 @@
         <meta-data
             android:name="com.bugsnag.android.API_KEY"
             android:value="52c5d2897e826c4b3ade2a56328dd74c"/>
+        <activity android:name=".activitys.HideAppActivity" android:theme="@style/AppTheme"/>
         <activity android:name=".activitys.AnswersListActivity" android:theme="@style/AppTheme"/>
         <activity android:name=".activitys.AnswerActivity" android:theme="@style/AppTheme"/>
         <activity android:name=".activitys.QuestionsActivity" android:theme="@style/AppTheme"/>
