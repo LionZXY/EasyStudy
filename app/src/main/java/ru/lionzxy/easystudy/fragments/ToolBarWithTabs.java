@@ -153,4 +153,8 @@ public class ToolBarWithTabs extends Fragment {
     public ViewPager getViewPager() {
         return viewPager;
     }
+
+    public MaterialMenuDrawable getMaterialMenu() {
+        return materialMenu;
+    }
 }

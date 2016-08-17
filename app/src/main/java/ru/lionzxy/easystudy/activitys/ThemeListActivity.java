@@ -13,12 +13,14 @@ import com.bugsnag.android.Bugsnag;
 
 import ru.lionzxy.easystudy.R;
 import ru.lionzxy.easystudy.fragments.ToolBarWithTabs;
+import ru.lionzxy.easystudy.helpers.DrawerWithUser;
 
 /**
  * Created by LionZXY on 22.07.2016.
  */
 public class ThemeListActivity extends AppCompatActivity implements ToolBarWithTabs.FragmentCallbacks {
     byte actionBarMenuState = 0;
+    DrawerWithUser drawerWithUser;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +30,14 @@ public class ThemeListActivity extends AppCompatActivity implements ToolBarWithT
 
         Bugsnag.init(this);
 
+        drawerWithUser = new DrawerWithUser(this);
+        drawerWithUser.setFragment(fragment);
+        drawerWithUser.addItem("Добавить дисциплинну");
+        drawerWithUser.addItem("Добавить вопрос");
+        drawerWithUser.addItem("Редактировать вопрос");
+        drawerWithUser.addItem("Оповещения");
+        drawerWithUser.addItem("Настройки");
+        drawerWithUser.addItem("Тех.поддержка");
         getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { // Might need to change the status bar color if it is not the theme
             Window w = getWindow();
@@ -46,13 +56,14 @@ public class ThemeListActivity extends AppCompatActivity implements ToolBarWithT
             case 0: {
                 actionBarMenuState = 1;
                 materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW);
-                //TODO navigationDrawer.openDrawer();
+                drawerWithUser.openDrawer();
                 break;
             }
             case 1: {
                 actionBarMenuState = 0;
                 materialMenu.animateIconState(MaterialMenuDrawable.IconState.BURGER);
-                //TODO navigationDrawer.closeDrawer();
+                new DrawerWithUser(this).openDrawer();
+                drawerWithUser.closeDrawer();
                 break;
             }
         }
@@ -62,7 +73,6 @@ public class ThemeListActivity extends AppCompatActivity implements ToolBarWithT
     public void onPageSelected(int position, ViewPager viewPager) {
 
     }
-
 
 
 }

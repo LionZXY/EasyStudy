@@ -42,7 +42,6 @@ public class OnPressedButton extends Button {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 onTouchEvent(event);
-                Log.i("OnTouch", "Touch! " + event.getAction());
                 int color;
                 AnimationSet animationSet;
                 switch (event.getAction()) {
