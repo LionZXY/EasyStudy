@@ -1,5 +1,6 @@
 package ru.lionzxy.easystudy.fragments;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
@@ -37,6 +38,11 @@ public class ToolBarWithTabs extends Fragment {
     public ToolBarWithTabs setFragmentManager(FragmentManager fragmentManager) {
         this.fragmentManager = fragmentManager;
         return this;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        this.onAttach(activity.getApplicationContext());
     }
 
     @Override

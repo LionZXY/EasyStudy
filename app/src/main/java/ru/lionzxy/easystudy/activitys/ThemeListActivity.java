@@ -38,6 +38,7 @@ public class ThemeListActivity extends AppCompatActivity implements ToolBarWithT
         drawerWithUser.addItem("Оповещения");
         drawerWithUser.addItem("Настройки");
         drawerWithUser.addItem("Тех.поддержка");
+
         getFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) { // Might need to change the status bar color if it is not the theme
             Window w = getWindow();
@@ -57,6 +58,7 @@ public class ThemeListActivity extends AppCompatActivity implements ToolBarWithT
                 actionBarMenuState = 1;
                 materialMenu.animateIconState(MaterialMenuDrawable.IconState.ARROW);
                 drawerWithUser.openDrawer();
+
                 break;
             }
             case 1: {

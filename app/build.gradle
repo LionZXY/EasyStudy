@@ -8,8 +8,8 @@ android {
         applicationId "ru.lionzxy.easystudy"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 5
-        versionName "0.5Beta"
+        versionCode 6
+        versionName "0.6Beta"
         multiDexEnabled true
     }
     buildTypes {

@@ -30,6 +30,8 @@ public class HideAppActivity extends AppCompatActivity {
         ImageView imageView = new ImageView(getBaseContext());
         imageView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         imageView.setImageResource(R.drawable.hide_mother_sms);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setAdjustViewBounds(true);
 
         setContentView(imageView);
     }
