@@ -1,5 +1,6 @@
 package ru.lionzxy.easystudy.fragments;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -42,15 +43,10 @@ public class ToolBarWithTabs extends Fragment {
 
     @Override
     public void onAttach(Activity activity) {
-        this.onAttach(activity.getApplicationContext());
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
+        super.onAttach(activity);
 
         try {
-            mCallbacks = (FragmentCallbacks) context;
+            mCallbacks = (FragmentCallbacks) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException("Context must implement Fragment Three.");
         }

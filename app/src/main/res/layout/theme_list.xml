@@ -12,135 +12,141 @@
 
     <LinearLayout
         android:id="@+id/left_drawer"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#336699"
         android:choiceMode="singleChoice"
         android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"
-        android:orientation="vertical">
+        android:dividerHeight="0dp">
 
-        <LinearLayout
-            android:layout_marginTop="40dp"
+        <ScrollView
+            android:fillViewport="true"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:background="#336699"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
                 android:orientation="vertical">
 
-                <RelativeLayout
+                <LinearLayout
+                    android:id="@+id/mainDrawerLL"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/question_avatar_image"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginRight="4dp"
-                        android:padding="8dp"
-                        android:paddingBottom="4dp"
-                        android:paddingTop="6dp"
-                        android:src="@drawable/img_freeface00" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:orientation="vertical">
 
-                    <RelativeLayout
+                        <RelativeLayout
+                            android:layout_marginBottom="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/question_avatar_image"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginEnd="4dp"
+                                android:layout_marginRight="4dp"
+                                android:padding="8dp"
+                                android:paddingBottom="4dp"
+                                android:paddingTop="6dp"
+                                android:src="@drawable/img_freeface00" />
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/question_avatar_image"
+                                android:layout_toRightOf="@id/question_avatar_image">
+
+                                <ru.lionzxy.easystudy.views.CustomFontView
+                                    android:id="@+id/userName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Иван Иванов"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="22sp"
+                                    app:font="RobotoRegular" />
+
+                                <ru.lionzxy.easystudy.views.CustomFontView
+                                    android:id="@+id/nameUniversity"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/userName"
+                                    android:alpha="@dimen/alphaF"
+                                    android:text="МГТУ им. Баумана"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12sp"
+                                    app:font="RobotoRegular" />
+
+                                <ru.lionzxy.easystudy.views.CustomFontView
+                                    android:id="@+id/universityLevel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/nameUniversity"
+                                    android:alpha="@dimen/alphaF"
+                                    android:ellipsize="end"
+                                    android:maxLines="2"
+                                    android:text="1 курс. Конструирование и проектирование электронных средств"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="12sp"
+                                    app:font="RobotoRegular" />
+
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ru.lionzxy.easystudy.views.RelativeLayoutWithLine
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingBottom="20dp"
+                    app:colorLine="#99cccc"
+                    app:gravity="top"
+                    app:orientation="horizontal"
+                    app:sizeLine="0.5dp">
+
+                    <ImageView
+                        android:id="@+id/exit_logo"
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/exit_icon" />
+
+                    <ru.lionzxy.easystudy.views.CustomFontView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/question_avatar_image"
-                        android:layout_toRightOf="@id/question_avatar_image">
-
-                        <ru.lionzxy.easystudy.views.CustomFontView
-                            android:id="@+id/userName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Иван Иванов"
-                            android:textColor="@android:color/white"
-                            android:textSize="22sp"
-                            app:font="RobotoRegular" />
-
-                        <ru.lionzxy.easystudy.views.CustomFontView
-                            android:id="@+id/nameUniversity"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/userName"
-                            android:alpha="@dimen/alphaF"
-                            android:text="МГТУ им. Баумана"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="@android:color/white"
-                            android:textSize="12sp"
-                            app:font="RobotoRegular" />
-
-                        <ru.lionzxy.easystudy.views.CustomFontView
-                            android:id="@+id/universityLevel"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/nameUniversity"
-                            android:alpha="@dimen/alphaF"
-                            android:ellipsize="end"
-                            android:maxLines="2"
-                            android:text="1 курс. Конструирование и проектирование электронных средств"
-                            android:textColor="@android:color/white"
-                            android:textSize="12sp"
-                            app:font="RobotoRegular" />
-
-
-                    </RelativeLayout>
-                </RelativeLayout>
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp" />
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@id/exit_logo"
+                        android:text="Выход"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        app:font="RobotoRegular" />
+                </ru.lionzxy.easystudy.views.RelativeLayoutWithLine>
             </LinearLayout>
-        </LinearLayout>
-
-        <ru.lionzxy.easystudy.views.RelativeLayoutWithLine
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="20dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:colorLine="#99cccc"
-            app:gravity="top"
-            app:orientation="horizontal"
-            app:sizeLine="0.5dp">
-
-            <ImageView
-                android:id="@+id/exit_logo"
-                android:layout_width="24dp"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginStart="30dp"
-                android:src="@drawable/exit_icon" />
-
-            <ru.lionzxy.easystudy.views.CustomFontView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_toRightOf="@id/exit_logo"
-                android:text="Выход"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                app:font="RobotoRegular" />
-        </ru.lionzxy.easystudy.views.RelativeLayoutWithLine>
+        </ScrollView>
     </LinearLayout>
-
 </android.support.v4.widget.DrawerLayout>
