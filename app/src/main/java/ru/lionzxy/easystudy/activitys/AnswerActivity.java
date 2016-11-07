@@ -22,11 +22,12 @@ import ru.lionzxy.easystudy.models.interfaces.IAnswer;
  * Created by LionZXY on 07.08.2016.
  */
 public class AnswerActivity extends AppCompatActivity implements View.OnClickListener {
+    private IAnswer answer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        IAnswer answer = (IAnswer) getIntent().getSerializableExtra("answer");
+        answer = (IAnswer) getIntent().getSerializableExtra("answer");
         if (answer == null)
             finish();
         setContentView(R.layout.question_answer_activity);
@@ -49,7 +50,12 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
         TextView questions = (TextView) findViewById(R.id.questions_question);
         questions.setText(Html.fromHtml("<b>" + getResources().getString(R.string.question) + "</b> " + answer.onQuestion().getQuestion()));
 
-        findViewById(R.id.answerCount).setVisibility(View.GONE);
+        if (answer.isBuying()) {
+            findViewById(R.id.hide_app).setVisibility(View.VISIBLE);
+        } else {
+            findViewById(R.id.buy).setVisibility(View.VISIBLE);
+            findViewById(R.id.hide_app).setAlpha(0.0F);
+        }
 
         CrossView crossView = (CrossView) findViewById(R.id.cross_view);
         crossView.cross();
@@ -58,6 +64,20 @@ public class AnswerActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        startActivity(new Intent(getBaseContext(), HideAppActivity.class));
+        if (v.getVisibility() == View.VISIBLE)
+            switch (v.getId()) {
+                case R.id.hide_app:
+                    startActivity(new Intent(getBaseContext(), HideAppActivity.class));
+                    break;
+                case R.id.buy_button:
+                    answer.setBuying(true);
+                    findViewById(R.id.buy).animate().alpha(0.0F);
+                    findViewById(R.id.hide_app).setVisibility(View.VISIBLE);
+                    findViewById(R.id.hide_app).animate().alpha(1.0F);
+                    break;
+                case R.id.cart_button:
+                    ((TextView) findViewById(R.id.cart_button)).setText("Добавленно");
+                    break;
+            }
     }
 }

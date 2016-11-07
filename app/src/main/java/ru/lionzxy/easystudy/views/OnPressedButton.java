@@ -50,7 +50,7 @@ public class OnPressedButton extends Button {
                         clearAnimation();
                         color = ((ColorDrawable) OnPressedButton.this.getBackground()).getColor();
                         animationSet = new AnimationSet(true);
-                        animationSet.addAnimation(new ChangeBackgroundColorAnimation(v, color, onPressedColor, 500L));
+                        animationSet.addAnimation(new ChangeBackgroundColorAnimation(v, color, onPressedColor, 1L));
                         animationSet.addAnimation(new ChangeTextColorAnimation((TextView) v, ((OnPressedButton) v).getCurrentTextColor(), normalColor, 500L));
                         v.startAnimation(animationSet);
                         return true;
@@ -59,7 +59,7 @@ public class OnPressedButton extends Button {
                         clearAnimation();
                         color = ((ColorDrawable) OnPressedButton.this.getBackground()).getColor();
                         animationSet = new AnimationSet(true);
-                        animationSet.addAnimation(new ChangeBackgroundColorAnimation(v, color, normalColor, 300L));
+                        animationSet.addAnimation(new ChangeBackgroundColorAnimation(v, color, normalColor, 500L));
                         animationSet.addAnimation(new ChangeTextColorAnimation((TextView) v, ((OnPressedButton) v).getCurrentTextColor(), Color.BLACK, 300L));
                         v.startAnimation(animationSet);
                         return true;

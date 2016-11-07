@@ -17,5 +17,8 @@ public interface IAnswer extends Serializable{
     List<Tag> getTags();
     int getFavorites();
     Time getDateCreated();
+    boolean isBuying();
+
+    void setBuying(boolean buying);
 
 }

@@ -19,6 +19,7 @@ public class Answer implements IAnswer {
     private List<Tag> tags;
     private int favorites;
     private Time dateCreated;
+    private boolean buying = false;
 
     public Answer(IQuestion onQuestion,
                   IAdvancedText answer) {
@@ -78,5 +79,15 @@ public class Answer implements IAnswer {
     @Override
     public Time getDateCreated() {
         return dateCreated;
+    }
+
+    @Override
+    public boolean isBuying() {
+        return buying;
+    }
+
+    @Override
+    public void setBuying(boolean buying) {
+        this.buying = buying;
     }
 }
